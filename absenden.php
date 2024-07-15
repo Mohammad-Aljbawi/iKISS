@@ -40,10 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['pdfFile'])) {
         // E-Mail senden
         $mailSend = mail($empfaenger, $betreff, $nachricht, $header);
 
-if ($mailSend) {
-    echo 'Die E-Mail mit der Datei wurde erfolgreich verschickt!';
-} else {
-    echo 'Beim Versenden der E-Mail ist ein Fehler aufgetreten.';
-}
+        if ($mailSend) {
+            echo 'Die E-Mail mit der Datei wurde erfolgreich verschickt!';
+        } else {
+            echo 'Beim Versenden der E-Mail ist ein Fehler aufgetreten.';
+        }
     }
+}
 ?>
